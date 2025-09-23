@@ -5,10 +5,16 @@ on:
       - "release/**"
     paths:
       - "src/**"
+      - "test/**"
+
   pull_request:
-        branches:
-          - main
-          - "release/**"
+    paths:
+      - "src/**"
+      - "test/**"
+      - "package.json"
+      - "package-lock.json"
+      - "tsconfig.json"
+      - "github/workflows/push-pr.yml"
 jobs:
   test:
     runs-on: ubuntu-latest
